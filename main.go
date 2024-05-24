@@ -8,6 +8,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"log"
+	"time"
 )
 
 type NodeVersions struct {
@@ -51,6 +52,7 @@ func main() {
 		} else {
 			log.Printf("Node versions: %v", status)
 		}
+		time.Sleep(*checkInterval)
 	}
 
 }
